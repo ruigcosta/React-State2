@@ -40,7 +40,6 @@ const CorpoTabela =(props)=>{
 
 
 
-
 class Tabela4 extends React.Component {
 
 
