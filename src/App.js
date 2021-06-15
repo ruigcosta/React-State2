@@ -26,6 +26,17 @@ class App extends React.Component {
     ]
   }
 
+  removerAluno=(idAluno)=> {
+    const {alunos} = this.state;
+    this.setState( {
+      alunos : alunos.filter(  
+                              (aluno,indexAluno) => {
+                              return indexAluno !== idAluno
+                            } )
+    });    
+  }
+
+
 
   render() {
     //este método é obrigatório caso se trate de uma classe
@@ -37,7 +48,9 @@ class App extends React.Component {
         <div className="row">
           <div className="col-4">
             <h4>Tabela 4 construída com componentes</h4>
-            <Tabela4 parDadosAlunos={alunos}/>
+            <Tabela4 inDadosAlunos={alunos}
+              outTabelaAlunoParaRemover = {this.removerAluno}
+            />
             {/* parDadosAlunos é o parâmetro de input que existirá na Tabela3 */}
           </div>
         </div>

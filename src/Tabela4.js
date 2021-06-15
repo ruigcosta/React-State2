@@ -26,7 +26,11 @@ const CorpoTabela =(props)=>{
         <tr key={index}>
           <td>{linha.nome}</td>
           <td>{linha.apelido}</td>
-          <td>apagar</td>
+          <td>
+            <button className="btn btn-danger"
+              onClick={()=>props.outAlunoARemover(index)}>apagar</button>
+
+          </td>
         </tr>
       );
     });
@@ -45,14 +49,16 @@ class Tabela4 extends React.Component {
 
     render() {
 
-        const {parDadosAlunos}=this.props;
+        const {inDadosAlunos, outTabelaAlunoParaRemover}=this.props;
 
 
         return (
             <table className="table">
               
               <CabecalhoTabela/>
-              <CorpoTabela dadosAlunos={parDadosAlunos} />
+              <CorpoTabela dadosAlunos={inDadosAlunos}
+                  outAlunoARemover={outTabelaAlunoParaRemover}
+               />
 
             </table>
 
